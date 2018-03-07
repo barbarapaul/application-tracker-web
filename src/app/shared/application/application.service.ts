@@ -12,4 +12,7 @@ export class ApplicationService {
     return this.http.get('//localhost:8080/api/v1/applications');
   }
 
+  save(application: any): Observable<any> {
+    return this.http.post('//localhost:8080/api/v1/applications', application);
+  }
 }

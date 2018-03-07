@@ -9,12 +9,31 @@ import {ApplicationListComponent} from './application-list/application-list.comp
 
 import {MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ApplicationSubmitComponent} from './application-submit/application-submit.component';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
 
+const appRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: '/application-list',
+    pathMatch: 'full'
+  },
+  {
+    path: 'application-list',
+    component: ApplicationListComponent
+  },
+  {
+    path: 'application-submit',
+    component: ApplicationSubmitComponent
+  }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ApplicationListComponent
+    ApplicationListComponent,
+    ApplicationSubmitComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +43,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatCardModule,
     MatInputModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ApplicationService],
   bootstrap: [AppComponent]

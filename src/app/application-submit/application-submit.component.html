@@ -1,0 +1,21 @@
+<mat-card>
+  <form #applicationForm="ngForm" (ngSubmit)="save(applicationForm.value)">
+    <mat-card-header>
+      <mat-card-title><h2>Submit Application</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Application Name" [(ngModel)]="application.name"
+               required name="name" #name>
+      </mat-form-field>
+      <mat-form-field>
+      <input matInput placeholder="Answers" [(ngModel)]="application.answers"
+             required name="answers" #answers>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+      <a mat-button routerLink="/application-list">Cancel</a>
+    </mat-card-actions>
+  </form>
+</mat-card>
