@@ -22,7 +22,7 @@ export class ApplicationSubmitComponent {
   }
 
   save(form: NgForm) {
-    form.answers = JSON.parse(form.answers);
+    form["answers"] = JSON.parse(form["answers"]);
     this.applicationService.save(form).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
