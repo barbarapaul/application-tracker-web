@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Applications</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ul *ngFor="let application of applications">
+      <li>{{application.name}}
+        <ul *ngFor="let answer of application.answers">{{answer.id}}: {{answer.answer}}</ul>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
